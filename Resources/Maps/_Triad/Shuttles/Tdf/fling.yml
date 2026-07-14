@@ -4,8 +4,8 @@ meta:
   engineVersion: 277.2.1
   forkId: ""
   forkVersion: ""
-  time: 07/14/2026 06:59:46
-  entityCount: 459
+  time: 07/14/2026 07:45:40
+  entityCount: 462
 maps: []
 grids:
 - 1
@@ -88,10 +88,10 @@ entities:
     - type: ThermalSignature
     - type: SpreaderGrid
       spreadQueues:
-        MetalFoam: []
         Smoke: []
         Puddle: []
         Kudzu: []
+        MetalFoam: []
     - type: Shuttle
       dampingModifier: 0.25
     - type: GridPathfinding
@@ -363,7 +363,7 @@ entities:
       pos: 0.5,-7.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -8684.877
+      secondsUntilStateChange: -8860.8955
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -784,6 +784,13 @@ entities:
     components:
     - type: Transform
       pos: -1.1933185,0.7375326
+      parent: 1
+- proto: ButtonFrameGrey
+  entities:
+  - uid: 462
+    components:
+    - type: Transform
+      pos: 1.5,1.5
       parent: 1
 - proto: CableApcExtension
   entities:
@@ -1302,7 +1309,7 @@ entities:
   - uid: 179
     components:
     - type: Transform
-      pos: 1.5,1.5
+      pos: -0.5,1.5
       parent: 1
   - uid: 180
     components:
@@ -1396,6 +1403,14 @@ entities:
     components:
     - type: Transform
       pos: -2.5,-2.5
+      parent: 1
+    - type: Fixtures
+      fixtures: {}
+  - uid: 460
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.5,2.5
       parent: 1
     - type: Fixtures
       fixtures: {}
@@ -2337,6 +2352,18 @@ entities:
     - type: Transform
       pos: 5.5,-1.5
       parent: 1
+- proto: SignalButton
+  entities:
+  - uid: 461
+    components:
+    - type: Transform
+      pos: 1.5,1.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        15:
+        - - Pressed
+          - DoorBolt
 - proto: Sink
   entities:
   - uid: 296
