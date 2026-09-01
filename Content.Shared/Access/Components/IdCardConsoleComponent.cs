@@ -46,8 +46,8 @@ public sealed partial class IdCardConsoleComponent : Component
     public List<ProtoId<AccessLevelPrototype>> AccessLevels = new()
     {
         "Armory",
-        //"Atmospherics",
-        "TdfWarden", // Triad
+        "Atmospherics", // Triad, restored this
+        "TdfLieutenant", // Triad
         //"Bar",
         "Brig",
         "Detective",
@@ -56,11 +56,11 @@ public sealed partial class IdCardConsoleComponent : Component
         //"Chapel",
         //"Chemistry",
         //"ChiefEngineer",
-        //"ChiefMedicalOfficer",
+        "ChiefMedicalOfficer", // Triad - DoC access
         "Command",
         //"Cryogenics",
-        //"Engineering",
-        "External",
+        "Engineering", // Triad: restored - engineering is a player-delegatable role on Triad (plant + ship engineers)
+        "External", // Triad - needed so ID card consoles don't remove this access from player IDs
         "Frontier", // Frontier
         "HeadOfPersonnel",
         "TdfChiefEnforcer", // Triad
@@ -72,7 +72,7 @@ public sealed partial class IdCardConsoleComponent : Component
         //"Quartermaster",
         //"Research",
         "Lawyer",
-        "Maintenance",
+        "Maintenance", // Triad - needed so ID card consoles don't remove this access from player IDs
         "Medical", // Frontier
         //"Quartermaster",
         //"Research",
@@ -80,11 +80,9 @@ public sealed partial class IdCardConsoleComponent : Component
         //"Salvage",
         "Security",
         "TdfPatrolTeamLeader", // Triad
+        "TdfPermitControl", // Triad
         "Service",
         "StationTrafficController", // Frontier
-        //"USSP", // Mono
-        //"USSPHigh", // Mono
-        //"USSPCommand", // Mono
         //"Theatre",
     };
 

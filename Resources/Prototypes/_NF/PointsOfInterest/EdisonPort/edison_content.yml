@@ -29,7 +29,7 @@
 - type: entity
   id: CSComputerCargoOrdersEddison
   parent: ComputerCargoOrders
-  name: plant manager's request computer
+  name: Director of Infrastructure's request computer
   description: Used to purchase restricted engineering supplies.
   components:
   # Triad: dropped the NFCargoOrderConsole override (NF sector-cargo variant not ported) and
@@ -43,7 +43,7 @@
       Medical: 0.1
       Edison: 0.15
   - type: AccessReader
-    access: [["ChiefEngineer"]]
+    access: [["Command"]] # Triad: retired ChiefEngineer; the Director runs the plant on Command
 
 # --- EdisonTechFab  (coyote: _CS/Entities/Structures/Machines/lathe.yml) ---
 - type: entity
@@ -82,36 +82,6 @@
   suffix: Welding Fuel
   description: Industrial fuel for a Junior P.A.C.M.A.N. Highly explosive.
 
-# --- PlushieFlick  (coyote: _CS/Entities/Objects/Fun/toys.yml) ---
-- type: entity
-  parent: PlushieExperiment
-  id: PlushieFlick #yip!
-  name: cybersun engineer plushie
-  description: Each plushie is given its soul by pressing it to a supermatter sliver, if you listen closely you can hear yourself getting cancer in real-time!
-  components:
-  - type: Sprite
-    sprite: _CS/Objects/Fun/Plushies/flickplushie.rsi
-    state: flick
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: flick-inhand-left
-        shader: shaded
-      right:
-      - state: flick-inhand-right
-        shader: shaded
-    heldPrefix: plushieflick
-  - type: Clothing
-    clothingVisuals:
-      head:
-      - state: flick-equipped-HELMET
-        shader: shaded
-    quickEquip: false
-    sprite: _CS/Objects/Fun/Plushies/flickplushie.rsi
-    equippedPrefix: plushieflick
-    slots:
-    - HEAD
-
 # Triad: Shower dropped as duplicate of _EE/Entities/Structures/Furniture/shower.yml (kept; constructable). Map resolves to it.
 
 # --- DangerTether  (coyote: _NF/Entities/Markers/danger_tether.yml) ---
@@ -130,12 +100,10 @@
         state: pink
   # Triad: dropped DangerTether component (DangerTether system not ported); static marker.
 
-# --- BusScheduleRoute1  (coyote: _NF/Entities/Structures/Wallmounts/bus_schedule.yml) ---
-- type: entity
-  parent: BusSchedule
-  id: BusScheduleRoute1
-  suffix: Route 1, Spawn Points
-  # Triad: BusSchedule component dropped (see parent); inherits the static sign.
+# Triad: BusScheduleRoute1 dropped. It was ours (#339) and overrode nothing but its own spawn-menu
+# suffix, so it was a second name for BusSchedule rather than a second sign. "Route 1" never meant
+# anything here either: there is one bus running one loop, so every sign in the sector shows the
+# same next stop. Placements repointed at BusSchedule.
 
 # --- JukeboxPOI  (coyote: _NF/Entities/Structures/Machines/jukebox.yml) ---
 - type: entity
@@ -150,11 +118,11 @@
 - type: entity
   parent: GunSafe
   id: GunSafePlantManager
-  name: plant manager's gun safe
+  name: Director of Infrastructure's gun safe
   suffix: Filled
   components:
   - type: AccessReader
-    access: [["ChiefEngineer"]]
+    access: [["Command"]] # Triad: retired ChiefEngineer; the Director runs the plant on Command
   - type: StorageFill
     contents:
     - id: WeaponPistolMk58
@@ -183,6 +151,10 @@
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       sprite: Structures/Machines/computers.rsi
       state: generic_panel_open
+  # Triad: plant comms console - overrides the stationwide ComputerComms access so the Director of
+  # Infrastructure (Command) and Sector Technician (Engineering) can use it.
+  - type: AccessReader
+    access: [["Command"], ["Engineering"]]
 
 # --- ComputerTabletopStationAdminBankATMEdison  (coyote: _NF/Entities/Structures/Machines/Computers/computers_tabletop.yml) ---
 - type: entity
@@ -193,9 +165,9 @@
   components:
   - type: StationBankATM
     account: Edison # Triad: restored coyote's Edison sector account
-  # Triad: the plant's chief engineer (Plant Manager) runs the terminal alongside the HoP/Chief Enforcer
+  # Triad: the plant's chief engineer (Director of Infrastructure) runs the terminal alongside the HoP/Chief Enforcer
   - type: AccessReader
-    access: [["HeadOfPersonnel"], ["TdfChiefEnforcer"], ["ChiefEngineer"]]
+    access: [["HeadOfPersonnel"], ["Command"]] # Triad: retired ChiefEngineer (Director via Command)
 
 # --- AntiMatterFabricator  (coyote: _NF/Entities/Structures/Machines/ame_fab.yml) ---
 - type: entity
@@ -316,8 +288,8 @@
   - type: ActivatableUI
     key: enum.AdjustablePowerDrawUiKey.Key
   - type: EntitySpawnPowerConsumer
-    spawn: AmeJar
-    energyPerSpawn: 6000000000 # 1.2 GJ (75% base eff.) multiplied by 5 to compensate for AmeJarBig buff
+    spawn: AmeJarExtended
+    energyPerSpawn: 3000000000 # 1.2 GJ (75% base eff.) multiplied by 5 to compensate for AmeJarBig buff
     material: Plasteel
     materialAmount: 500
   - type: ItemSlots
@@ -606,9 +578,11 @@
     layers:
     - state: body
     - state: top_greyscale
+      map: [ "Livery" ]
       color: "#aaaaaa"
-  # Triad: dropped BusSchedule + PublicTransitVisuals components (Frontier PublicTransit
-  # system not ported); the sign is a static prop. our StationTransit still handles routes.
+  # Triad: live again. The panel is tinted to the IFF colour of the stop the bus is heading for,
+  # driven by PublicTransitSystem and painted by BusScheduleVisualizerSystem.
+  - type: BusSchedule
   - type: Appearance
 
 # Triad: ClothingNeckCollarBase dropped as duplicate of canonical Floof/Entities/Clothing/Neck/collars.yml

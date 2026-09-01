@@ -3,40 +3,13 @@
 # Frontier-specific fields/components/graphs absent on this fork were stripped (noted inline)
 # so the map loads cleanly; refit later.
 
-# --- Lighting ------------------------------------------------------------------
-# Triad: dropped upstream `solarFlareShieldingCoefficient` (no solar-flare feature here),
-# the shielded RSI (not vendored), and the shielded construction node (graph node absent).
-# These behave as normal empty light fixtures until a shielded variant is built out.
-- type: entity
-  id: NFPoweredlightShieldedEmpty
-  parent: PoweredlightEmpty
-  name: shielded light
-  description: A light fixture. Draws power and produces light when equipped with a light tube. Reinforced with plasteel to shield it from solar flares.
-  suffix: Empty
-
-- type: entity
-  id: NFPoweredSmallLightShieldedEmpty
-  parent: PoweredSmallLightEmpty
-  name: shielded small light
-  description: A light fixture. Draws power and produces light when equipped with a light tube. Reinforced with plasteel to shield it from solar flares.
-  suffix: Empty
-
-- type: entity
-  parent: BaseLightTubeCrystal
-  name: ultraviolet light tube
-  id: LightTubeUltraviolet
-  description: A high power high energy bulb which has a small colored crystal inside.
-  components:
-  - type: LightBulb
-    color: "#5D0CED"
-
 # --- Job spawn markers -----------------------------------------------------------
 # Triad: restored from coyote (the earlier port had re-protoed the map's plant spawners
 # into SpawnPointLatejoin because the plant jobs didn't exist there).
 - type: entity
   id: SpawnPointPlantManager
   parent: SpawnPointJobBase
-  name: plant manager
+  name: Director of Infrastructure
   components:
   - type: SpawnPoint
     job_id: PlantManager
@@ -49,7 +22,7 @@
 - type: entity
   id: SpawnPointPlantTechnician
   parent: SpawnPointJobBase
-  name: plant technician
+  name: Sector Technician
   components:
   - type: SpawnPoint
     job_id: PlantTechnician
@@ -80,7 +53,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: DefaultStationBeaconFrontierManagersOffice
-  suffix: PM's Office
+  suffix: Director's Office
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-managers-office
@@ -88,7 +61,7 @@
 - type: entity
   parent: DefaultStationBeaconCommand
   id: DefaultStationBeaconFrontierManagersQuarters
-  suffix: PM's Quarters
+  suffix: Director's Quarters
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-managers-quarters
@@ -223,12 +196,12 @@
   id: CrateEngineeringTeslaCoilBulk
   parent: CrateEngineeringSecure
   name: bulk tesla coil crate
-  description: A collection of six tesla coils. Attracts lightning and generates energy from it.
+  description: A dozen flatpacked tesla coils. Attract lightning and generate energy from it.
   components:
   - type: StorageFill
     contents:
       - id: TeslaCoilFlatpack
-        amount: 6
+        amount: 12 # Triad: one crate = a starter array; two = the 24-tower max-output build
 
 - type: entity
   id: CrateEngineeringSingularityCollectorBulk

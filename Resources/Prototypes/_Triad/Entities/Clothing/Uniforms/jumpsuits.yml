@@ -7,6 +7,9 @@
   components:
   - type: Sprite
     sprite: _Triad/Clothing/Uniforms/Jumpsuits/junior_enforcer.rsi
+  - type: Tag
+    tags:
+    - ClothMade # No chameleon
 
 - type: entity
   parent: ClothingUniformBase
@@ -16,6 +19,9 @@
   components:
   - type: Sprite
     sprite: _Triad/Clothing/Uniforms/Jumpsuits/combat_medic.rsi
+  - type: Tag
+    tags:
+    - ClothMade # No chameleon
 
 - type: entity
   parent: ClothingUniformBase
@@ -25,6 +31,9 @@
   components:
   - type: Sprite
     sprite: _Triad/Clothing/Uniforms/Jumpsuits/enforcer.rsi
+  - type: Tag
+    tags:
+    - ClothMade # No chameleon
 
 - type: entity
   parent: ClothingUniformBase
@@ -34,15 +43,21 @@
   components:
   - type: Sprite
     sprite: _Triad/Clothing/Uniforms/Jumpsuits/section_leader.rsi
+  - type: Tag
+    tags:
+    - ClothMade # No chameleon
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitTdfWarden
-  name: TDF warden tactical jumpsuit
-  description: A tactical jumpsuit for the dude who sits in the brig all the time.
+  id: ClothingUniformJumpsuitTdfLieutenant
+  name: TDF lieutenant tactical jumpsuit
+  description: A tactical jumpsuit for the second in command of the Triad Defense Force.
   components:
   - type: Sprite
     sprite: _Triad/Clothing/Uniforms/Jumpsuits/warden.rsi
+  - type: Tag
+    tags:
+    - ClothMade # No chameleon
 
 - type: entity
   parent: ClothingUniformBase
@@ -52,6 +67,9 @@
   components:
   - type: Sprite
     sprite: _Triad/Clothing/Uniforms/Jumpsuits/chief_enforcer.rsi
+  - type: Tag
+    tags:
+    - ClothMade # No chameleon
 
 - type: entity
   parent: ClothingUniformBase
@@ -61,12 +79,15 @@
   components:
   - type: Sprite
     sprite: _Triad/Clothing/Uniforms/Jumpsuits/chief_enforcer_dress.rsi
+  - type: Tag
+    tags:
+    - ClothMade # No chameleon
 
-# TDF High-Command
+# Triad frontier association High-Command
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitTdfHighCommand
-  name: TDF high command jumpsuit
+  id: ClothingUniformJumpsuitTfaHighCommand
+  name: TFA high command jumpsuit
   description: Paper-pusher.
   components:
   - type: Sprite
@@ -87,3 +108,14 @@
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/strainedshorts.rsi
   - type: Clothing
     sprite: _DEN/Clothing/Uniforms/Jumpsuit/strainedshorts.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformIndustrialWorker
+  name: industrial worker uniform
+  description: Standard fatigues of a hard worker, fit with kevlar to protect from accidents.
+  components:
+  - type: Sprite
+    sprite: _Triad/Clothing/Uniforms/Jumpsuits/worker_wear.rsi
+  - type: Clothing
+    sprite: _Triad/Clothing/Uniforms/Jumpsuits/worker_wear.rsi

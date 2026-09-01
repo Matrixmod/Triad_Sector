@@ -207,7 +207,6 @@
   - ContractorClothingUniformJumpskirtYellowTurtleneckDress
   - ContractorClothingUniformJumpskirtYellowOldDress
   - ContractorClothingUniformJabroni
-  - StrainedShorts # Triad
   # Triad start - Ported MNK clothes.
   - ClothingUniformMNKOfficeSkirt
   - ClothingUniformMNKUnderGarment
@@ -216,6 +215,8 @@
   - ClothingUniformMNKBlackOveralls
   - ClothingUniformMNKBlackShoulder
   - ClothingUniformMNKTracksuitBlack
+  - ClothingUniformIndustrialWorker
+  - StrainedShorts
   # End Triad
 
   fallbacks:
@@ -231,10 +232,16 @@
   - ContractorClothingModsuitCaptainPowerCell
   - ContractorClothingModsuitEngineerPowerCell
   ## Mono end
+  # Triad start
+  - ClothingBackpackMilitary
+  - ClothingBackpackSatchelMilitary
+  - ClothingBackpackDuffelMilitary
+  # Triad end
   - ContractorClothingBackpack
   - ContractorClothingBackpackDuffel
   - ContractorClothingBackpackSatchel
   - ContractorClothingBackpackMessenger
+  - ClothingBackpackSatchelLeather # Triad
   - ContractorClothingBackpackCaptain
   - ContractorClothingBackpackDuffelCaptain
   - ContractorClothingBackpackSatchelCaptain
@@ -619,7 +626,6 @@
   - ContractorClothingHeadsetAltEngineeringCommon
   - ContractorClothingHeadsetAltMedicalCommon
   - ContractorClothingHeadsetAltScienceCommon
-  - USSPHeadset # Mono
   fallbacks:
   - ContractorClothingHeadsetGreyCommon
 
@@ -809,9 +815,10 @@
   # End Triad
 
 - type: loadoutGroup
-  id: ContractorFun # Left Hand - 1 only
+  id: ContractorFun
   name: loadout-group-contractor-fun
   minLimit: 0
+  maxLimit: 2
   loadouts:
   - ContractorBriefcaseBrownFilled
   - ContractorToolboxEmergency
@@ -835,6 +842,9 @@
   - ContractorHoverbikeFlatpack
   - ContractorEmotionalPetCarrier
   - ContractorCrayonMagic
+  # Triad changes
+  - HoloprojectorPrivate
+  # End Triad
 
 - type: loadoutGroup
   id: ContractorFace

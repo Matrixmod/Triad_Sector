@@ -27,6 +27,19 @@
 
 - type: latheRecipe
   parent: BaseWeaponRecipeLong
+  id: WeaponShotgunDoubleBarreledTdfBastion
+  result: WeaponShotgunDoubleBarreledTdfBastion
+  categories:
+  - Shotguns
+  - Ballistic
+  - Weapons
+  materials: # scaled up from a 579-credit bill to match the 5,000-credit sale price
+    Steel: 22000
+    Plasteel: 13000
+    Plastic: 4500
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
   id: WeaponLMGRiotTdf
   result: WeaponLMGRiot
   categories:

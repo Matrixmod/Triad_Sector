@@ -20,18 +20,19 @@ namespace Content.Shared.RPD.Systems;
 /// pipe-layer alternative chosen by cursor quadrant. The operator's pipe-color stain lives server-side in
 /// <c>RPDPipeColorSystem</c>, which owns the canonical <c>AtmosPipeColorComponent</c>.
 /// </summary>
-public sealed class RPDSystem : EntitySystem
+public sealed partial class RPDSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly SharedAtmosPipeLayersSystem _pipeLayers = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IPrototypeManager _protoManager = default!;
+    [Dependency] private SharedAtmosPipeLayersSystem _pipeLayers = default!;
+    [Dependency] private SharedMapSystem _mapSystem = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<RPDComponent, RCDDeconstructAttemptEvent>(OnDeconstructAttempt);
+        SubscribeLocalEvent<RPDComponent, RCDPlacementCommitEvent>(OnPlacementCommit);
         SubscribeLocalEvent<RPDComponent, RCDObjectSpawnAttemptEvent>(OnObjectSpawnAttempt);
         SubscribeLocalEvent<RPDComponent, RCDDeconstructTargetResolveEvent>(OnDeconstructTargetResolve);
         SubscribeLocalEvent<RPDComponent, RPDColorChangeMessage>(OnColorChange);
@@ -69,8 +70,19 @@ public sealed class RPDSystem : EntitySystem
     }
 
     /// <summary>
+    /// Stamps the cursor-aimed layer onto the placement at the commit click. From here on the RCD pipeline carries
+    /// it in the do-after; <see cref="RPDComponent.CurrentLayer"/> keeps streaming for the next click and for
+    /// deconstruct targeting, but this placement no longer reads it.
+    /// </summary>
+    private void OnPlacementCommit(Entity<RPDComponent> ent, ref RCDPlacementCommitEvent args)
+    {
+        args.Layer = ent.Comp.CurrentLayer;
+    }
+
+    /// <summary>
     /// Rewrites the spawn prototype to the AtmosPipeLayer alternative when the recipe is layer-capable and the
-    /// target entity defines pipe-layer variants. Falls through to the original prototype otherwise.
+    /// target entity defines pipe-layer variants. Falls through to the original prototype otherwise. Reads the
+    /// layer captured at commit (<see cref="RCDObjectSpawnAttemptEvent.Layer"/>), never the live cursor state.
     /// </summary>
     private void OnObjectSpawnAttempt(Entity<RPDComponent> ent, ref RCDObjectSpawnAttemptEvent args)
     {
@@ -80,10 +92,10 @@ public sealed class RPDSystem : EntitySystem
         if (!_protoManager.TryIndex<EntityPrototype>(args.SpawnProto, out var entityProto))
             return;
 
-        if (!entityProto.TryGetComponent<AtmosPipeLayersComponent>(out var atmosPipeLayers, EntityManager.ComponentFactory))
+        if (!entityProto.TryComp<AtmosPipeLayersComponent>(out var atmosPipeLayers, EntityManager.ComponentFactory))
             return;
 
-        if (_pipeLayers.TryGetAlternativePrototype(atmosPipeLayers, ent.Comp.CurrentLayer, out var layerProto))
+        if (_pipeLayers.TryGetAlternativePrototype(atmosPipeLayers, args.Layer, out var layerProto))
             args.SpawnProto = layerProto.Id;
     }
 
