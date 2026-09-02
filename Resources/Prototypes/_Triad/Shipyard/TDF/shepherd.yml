@@ -7,17 +7,17 @@
   category: Small
   group: Security
   access: Security
-  shuttlePath: /Maps/_Triad/Shuttles/TDF/Shepherd.yml
+  shuttlePath: /Maps/_Triad/Shuttles/TDF/shepherd.yml
   guidebookPage: Null
   class:
-  - Interceptor
+  - Frigate
   engine:
   - Bananium
 
 - type: gameMap
   id: Shepherd
   mapName: 'Shepherd'
-  mapPath: /Maps/_Triad/Shuttles/TDF/Shepherd.yml
+  mapPath: /Maps/_Triad/Shuttles/TDF/shepherd.yml
   minPlayers: 0
   stations:
     Shepherd:

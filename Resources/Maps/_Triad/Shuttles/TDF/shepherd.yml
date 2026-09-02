@@ -48,7 +48,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Shepherd
+      name: shepherd
     - type: Transform
       parent: invalid
       pos: -0.4375,-0.5
