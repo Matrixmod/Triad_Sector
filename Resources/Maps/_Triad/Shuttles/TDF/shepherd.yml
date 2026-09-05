@@ -4,8 +4,8 @@ meta:
   engineVersion: 287.0.0
   forkId: ""
   forkVersion: ""
-  time: 09/04/2026 10:39:46
-  entityCount: 527
+  time: 09/05/2026 04:48:57
+  entityCount: 531
 maps: []
 grids:
 - 1
@@ -89,8 +89,8 @@ entities:
     - type: SpreaderGrid
       spreadQueues:
         Smoke: []
-        MetalFoam: []
         Kudzu: []
+        MetalFoam: []
         Puddle: []
     - type: Shuttle
       dampingModifier: 0.25
@@ -363,9 +363,9 @@ entities:
       pos: -1.5,2.5
     - type: DeviceList
       devices:
-      - 217
-      - 277
-      - 282
+      - 221
+      - 281
+      - 286
   - uid: 3
     components:
     - type: Transform
@@ -374,9 +374,9 @@ entities:
       pos: 2.5,1.5
     - type: DeviceList
       devices:
-      - 281
-      - 276
-      - 218
+      - 285
+      - 280
+      - 222
   - uid: 4
     components:
     - type: Transform
@@ -384,11 +384,11 @@ entities:
       pos: 0.5,2.5
     - type: DeviceList
       devices:
-      - 217
-      - 279
-      - 284
-      - 218
-      - 219
+      - 221
+      - 283
+      - 288
+      - 222
+      - 223
   - uid: 5
     components:
     - type: Transform
@@ -397,9 +397,9 @@ entities:
       pos: -5.5,-2.5
     - type: DeviceList
       devices:
-      - 283
-      - 278
-      - 222
+      - 287
+      - 282
+      - 226
   - uid: 6
     components:
     - type: Transform
@@ -408,9 +408,9 @@ entities:
       pos: 4.5,-3.5
     - type: DeviceList
       devices:
-      - 220
-      - 280
-      - 274
+      - 224
+      - 284
+      - 278
   - uid: 7
     components:
     - type: Transform
@@ -418,12 +418,12 @@ entities:
       pos: -0.5,-0.5
     - type: DeviceList
       devices:
-      - 275
-      - 285
-      - 220
-      - 221
-      - 222
-      - 219
+      - 279
+      - 289
+      - 224
+      - 225
+      - 226
+      - 223
 - proto: AirCanister
   entities:
   - uid: 8
@@ -434,7 +434,7 @@ entities:
       anchored: True
     - type: Physics
       bodyType: Static
-- proto: AirlockShuttleNfsd
+- proto: AirlockShuttleNfsdLocked
   entities:
   - uid: 9
     components:
@@ -443,40 +443,40 @@ entities:
       pos: 0.5,-5.5
 - proto: AirlockTdf
   entities:
-  - uid: 10
-    components:
-    - type: Transform
-      parent: 1
-      pos: 2.5,0.5
   - uid: 11
     components:
     - type: Transform
       parent: 1
       pos: 0.5,-0.5
-  - uid: 12
-    components:
-    - type: Transform
-      parent: 1
-      pos: -1.5,-2.5
-  - uid: 13
-    components:
-    - type: Transform
-      parent: 1
-      pos: 2.5,-2.5
-- proto: AirlockTdfGlass
+- proto: AirlockTdfGlassSecurityLocked
   entities:
   - uid: 14
     components:
     - type: Transform
       parent: 1
       pos: 0.5,-3.5
-- proto: AirlockTdfGlassGlassBrigLocked
-  entities:
   - uid: 15
     components:
     - type: Transform
       parent: 1
       pos: -1.5,0.5
+- proto: AirlockTdfSecurityLocked
+  entities:
+  - uid: 10
+    components:
+    - type: Transform
+      parent: 1
+      pos: 2.5,0.5
+  - uid: 12
+    components:
+    - type: Transform
+      parent: 1
+      pos: 2.5,-2.5
+  - uid: 13
+    components:
+    - type: Transform
+      parent: 1
+      pos: -1.5,-2.5
 - proto: APCBasic
   entities:
   - uid: 16
@@ -1453,20 +1453,20 @@ entities:
         209:
         - - device-button-1
           - Toggle
-        319:
+        215:
         - - device-button-1
           - Toggle
-        317:
+        213:
         - - device-button-1
           - Toggle
         93:
-        - - device-button-4
+        - - device-button-3
           - Toggle
-        14:
+        9:
         - - device-button-2
           - DoorBolt
-        9:
-        - - device-button-3
+        14:
+        - - device-button-4
           - DoorBolt
     - type: ApcPowerReceiver
       powerLoad: 5
@@ -1505,7 +1505,7 @@ entities:
       pos: -2.5,3.5
     - type: Door
       state: Opening
-      secondsUntilStateChange: -9033.439
+      secondsUntilStateChange: -10390.44
 - proto: DefibrillatorCabinetFilled
   entities:
   - uid: 201
@@ -1559,33 +1559,33 @@ entities:
       parent: 211
     - type: Physics
       canCollide: False
-  - uid: 318
+  - uid: 214
     components:
     - type: Transform
-      parent: 317
+      parent: 213
     - type: Physics
       canCollide: False
-  - uid: 320
+  - uid: 216
     components:
     - type: Transform
-      parent: 319
+      parent: 215
     - type: Physics
       canCollide: False
 - proto: ExtinguisherCabinetFilled
   entities:
-  - uid: 213
+  - uid: 217
     components:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: 3.5,-0.5
-  - uid: 214
+  - uid: 218
     components:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -0.5,2.5
-  - uid: 215
+  - uid: 219
     components:
     - type: Transform
       parent: 1
@@ -1593,14 +1593,14 @@ entities:
       pos: 2.5,3.5
 - proto: FaxMachineShip
   entities:
-  - uid: 216
+  - uid: 220
     components:
     - type: Transform
       parent: 1
       pos: -4.5,-1.5
 - proto: Firelock
   entities:
-  - uid: 217
+  - uid: 221
     components:
     - type: Transform
       parent: 1
@@ -1609,7 +1609,7 @@ entities:
       deviceLists:
       - 2
       - 4
-  - uid: 218
+  - uid: 222
     components:
     - type: Transform
       parent: 1
@@ -1618,7 +1618,7 @@ entities:
       deviceLists:
       - 4
       - 3
-  - uid: 219
+  - uid: 223
     components:
     - type: Transform
       parent: 1
@@ -1627,7 +1627,7 @@ entities:
       deviceLists:
       - 4
       - 7
-  - uid: 220
+  - uid: 224
     components:
     - type: Transform
       parent: 1
@@ -1636,7 +1636,7 @@ entities:
       deviceLists:
       - 7
       - 6
-  - uid: 221
+  - uid: 225
     components:
     - type: Transform
       parent: 1
@@ -1644,7 +1644,7 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 7
-  - uid: 222
+  - uid: 226
     components:
     - type: Transform
       parent: 1
@@ -1655,17 +1655,17 @@ entities:
       - 5
 - proto: FoodBoxDonut
   entities:
-  - uid: 223
+  - uid: 227
     components:
     - type: Transform
       parent: 1
       pos: -3.3345783,2.3498597
 - proto: FuelBananium
   entities:
-  - uid: 225
+  - uid: 229
     components:
     - type: Transform
-      parent: 224
+      parent: 228
     - type: Stack
       count: 75
     - type: Physics
@@ -1673,7 +1673,7 @@ entities:
     - type: InsideEntityStorage
 - proto: GasPassiveVent
   entities:
-  - uid: 226
+  - uid: 230
     components:
     - type: Transform
       parent: 1
@@ -1685,7 +1685,7 @@ entities:
       color: '#990000FF'
 - proto: GasPipeBend
   entities:
-  - uid: 227
+  - uid: 231
     components:
     - type: Transform
       parent: 1
@@ -1695,7 +1695,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 228
+  - uid: 232
     components:
     - type: Transform
       parent: 1
@@ -1705,7 +1705,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 229
+  - uid: 233
     components:
     - type: Transform
       parent: 1
@@ -1715,7 +1715,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 230
+  - uid: 234
     components:
     - type: Transform
       parent: 1
@@ -1724,7 +1724,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 231
+  - uid: 235
     components:
     - type: Transform
       parent: 1
@@ -1734,7 +1734,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 232
+  - uid: 236
     components:
     - type: Transform
       parent: 1
@@ -1743,7 +1743,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 233
+  - uid: 237
     components:
     - type: Transform
       parent: 1
@@ -1753,7 +1753,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 234
+  - uid: 238
     components:
     - type: Transform
       parent: 1
@@ -1763,7 +1763,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 235
+  - uid: 239
     components:
     - type: Transform
       parent: 1
@@ -1773,7 +1773,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 236
+  - uid: 240
     components:
     - type: Transform
       parent: 1
@@ -1783,7 +1783,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 237
+  - uid: 241
     components:
     - type: Transform
       parent: 1
@@ -1793,7 +1793,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 238
+  - uid: 242
     components:
     - type: Transform
       parent: 1
@@ -1805,7 +1805,7 @@ entities:
       color: '#0055CCFF'
 - proto: GasPipeFourway
   entities:
-  - uid: 239
+  - uid: 243
     components:
     - type: Transform
       parent: 1
@@ -1814,7 +1814,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 240
+  - uid: 244
     components:
     - type: Transform
       parent: 1
@@ -1825,7 +1825,7 @@ entities:
       color: '#990000FF'
 - proto: GasPipeStraight
   entities:
-  - uid: 241
+  - uid: 245
     components:
     - type: Transform
       parent: 1
@@ -1835,7 +1835,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 242
+  - uid: 246
     components:
     - type: Transform
       parent: 1
@@ -1845,7 +1845,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 243
+  - uid: 247
     components:
     - type: Transform
       parent: 1
@@ -1855,7 +1855,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 244
+  - uid: 248
     components:
     - type: Transform
       parent: 1
@@ -1865,7 +1865,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 245
+  - uid: 249
     components:
     - type: Transform
       parent: 1
@@ -1875,7 +1875,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 246
+  - uid: 250
     components:
     - type: Transform
       parent: 1
@@ -1885,52 +1885,12 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 247
-    components:
-    - type: Transform
-      parent: 1
-      rot: -1.5707963267948966 rad
-      pos: -2.5,-2.5
-    - type: AtmosPipeLayers
-      pipeLayer: Tertiary
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
-  - uid: 248
-    components:
-    - type: Transform
-      parent: 1
-      rot: 3.141592653589793 rad
-      pos: 0.5,-0.5
-    - type: AtmosPipeLayers
-      pipeLayer: Tertiary
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
-  - uid: 249
-    components:
-    - type: Transform
-      parent: 1
-      rot: -1.5707963267948966 rad
-      pos: -1.5,0.5
-    - type: AtmosPipeLayers
-      pipeLayer: Tertiary
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
-  - uid: 250
-    components:
-    - type: Transform
-      parent: 1
-      rot: -1.5707963267948966 rad
-      pos: 2.5,0.5
-    - type: AtmosPipeLayers
-      pipeLayer: Tertiary
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
   - uid: 251
     components:
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
-      pos: 1.5,0.5
+      pos: -2.5,-2.5
     - type: AtmosPipeLayers
       pipeLayer: Tertiary
     - type: AtmosPipeColor
@@ -1942,45 +1902,45 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-0.5
     - type: AtmosPipeLayers
-      pipeLayer: Secondary
+      pipeLayer: Tertiary
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#0055CCFF'
   - uid: 253
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
-      pos: 1.5,0.5
+      rot: -1.5707963267948966 rad
+      pos: -1.5,0.5
     - type: AtmosPipeLayers
-      pipeLayer: Secondary
+      pipeLayer: Tertiary
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#0055CCFF'
   - uid: 254
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
+      rot: -1.5707963267948966 rad
       pos: 2.5,0.5
     - type: AtmosPipeLayers
-      pipeLayer: Secondary
+      pipeLayer: Tertiary
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#0055CCFF'
   - uid: 255
     components:
     - type: Transform
       parent: 1
-      rot: 3.141592653589793 rad
-      pos: 3.5,1.5
+      rot: -1.5707963267948966 rad
+      pos: 1.5,0.5
     - type: AtmosPipeLayers
-      pipeLayer: Secondary
+      pipeLayer: Tertiary
     - type: AtmosPipeColor
-      color: '#990000FF'
+      color: '#0055CCFF'
   - uid: 256
     components:
     - type: Transform
       parent: 1
-      rot: 1.5707963267948966 rad
-      pos: -0.5,0.5
+      rot: 3.141592653589793 rad
+      pos: 0.5,-0.5
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -1990,7 +1950,7 @@ entities:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
-      pos: -1.5,0.5
+      pos: 1.5,0.5
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -1999,8 +1959,8 @@ entities:
     components:
     - type: Transform
       parent: 1
-      rot: 3.141592653589793 rad
-      pos: -2.5,1.5
+      rot: 1.5707963267948966 rad
+      pos: 2.5,0.5
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -2009,8 +1969,8 @@ entities:
     components:
     - type: Transform
       parent: 1
-      rot: -1.5707963267948966 rad
-      pos: -0.5,-2.5
+      rot: 3.141592653589793 rad
+      pos: 3.5,1.5
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -2019,8 +1979,8 @@ entities:
     components:
     - type: Transform
       parent: 1
-      rot: -1.5707963267948966 rad
-      pos: -1.5,-2.5
+      rot: 1.5707963267948966 rad
+      pos: -0.5,0.5
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
@@ -2030,12 +1990,52 @@ entities:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
-      pos: 7.5,1.5
+      pos: -1.5,0.5
     - type: AtmosPipeLayers
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 262
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -2.5,1.5
+    - type: AtmosPipeLayers
+      pipeLayer: Secondary
+    - type: AtmosPipeColor
+      color: '#990000FF'
+  - uid: 263
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-2.5
+    - type: AtmosPipeLayers
+      pipeLayer: Secondary
+    - type: AtmosPipeColor
+      color: '#990000FF'
+  - uid: 264
+    components:
+    - type: Transform
+      parent: 1
+      rot: -1.5707963267948966 rad
+      pos: -1.5,-2.5
+    - type: AtmosPipeLayers
+      pipeLayer: Secondary
+    - type: AtmosPipeColor
+      color: '#990000FF'
+  - uid: 265
+    components:
+    - type: Transform
+      parent: 1
+      rot: 1.5707963267948966 rad
+      pos: 7.5,1.5
+    - type: AtmosPipeLayers
+      pipeLayer: Secondary
+    - type: AtmosPipeColor
+      color: '#990000FF'
+  - uid: 266
     components:
     - type: Transform
       parent: 1
@@ -2045,7 +2045,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 263
+  - uid: 267
     components:
     - type: Transform
       parent: 1
@@ -2055,7 +2055,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 264
+  - uid: 268
     components:
     - type: Transform
       parent: 1
@@ -2065,7 +2065,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 265
+  - uid: 269
     components:
     - type: Transform
       parent: 1
@@ -2077,7 +2077,7 @@ entities:
       color: '#0055CCFF'
 - proto: GasPipeTJunction
   entities:
-  - uid: 266
+  - uid: 270
     components:
     - type: Transform
       parent: 1
@@ -2087,7 +2087,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 267
+  - uid: 271
     components:
     - type: Transform
       parent: 1
@@ -2097,7 +2097,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 268
+  - uid: 272
     components:
     - type: Transform
       parent: 1
@@ -2107,7 +2107,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 269
+  - uid: 273
     components:
     - type: Transform
       parent: 1
@@ -2117,7 +2117,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 270
+  - uid: 274
     components:
     - type: Transform
       parent: 1
@@ -2127,7 +2127,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 271
+  - uid: 275
     components:
     - type: Transform
       parent: 1
@@ -2139,7 +2139,7 @@ entities:
       color: '#990000FF'
 - proto: GasPort
   entities:
-  - uid: 272
+  - uid: 276
     components:
     - type: Transform
       parent: 1
@@ -2150,7 +2150,7 @@ entities:
       color: '#0055CCFF'
 - proto: GasPressurePumpOn
   entities:
-  - uid: 273
+  - uid: 277
     components:
     - type: Transform
       parent: 1
@@ -2162,7 +2162,7 @@ entities:
       color: '#990000FF'
 - proto: GasVentPump
   entities:
-  - uid: 274
+  - uid: 278
     components:
     - type: Transform
       parent: 1
@@ -2174,7 +2174,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 275
+  - uid: 279
     components:
     - type: Transform
       parent: 1
@@ -2187,7 +2187,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 276
+  - uid: 280
     components:
     - type: Transform
       parent: 1
@@ -2200,7 +2200,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 277
+  - uid: 281
     components:
     - type: Transform
       parent: 1
@@ -2213,7 +2213,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 278
+  - uid: 282
     components:
     - type: Transform
       parent: 1
@@ -2226,7 +2226,7 @@ entities:
       pipeLayer: Tertiary
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 279
+  - uid: 283
     components:
     - type: Transform
       parent: 1
@@ -2241,7 +2241,7 @@ entities:
       color: '#0055CCFF'
 - proto: GasVentScrubber
   entities:
-  - uid: 280
+  - uid: 284
     components:
     - type: Transform
       parent: 1
@@ -2253,7 +2253,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 281
+  - uid: 285
     components:
     - type: Transform
       parent: 1
@@ -2265,7 +2265,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 282
+  - uid: 286
     components:
     - type: Transform
       parent: 1
@@ -2277,7 +2277,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 283
+  - uid: 287
     components:
     - type: Transform
       parent: 1
@@ -2289,7 +2289,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 284
+  - uid: 288
     components:
     - type: Transform
       parent: 1
@@ -2302,7 +2302,7 @@ entities:
       pipeLayer: Secondary
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 285
+  - uid: 289
     components:
     - type: Transform
       parent: 1
@@ -2317,34 +2317,34 @@ entities:
       color: '#990000FF'
 - proto: GravityGeneratorMini
   entities:
-  - uid: 286
+  - uid: 290
     components:
     - type: Transform
       parent: 1
       pos: 3.5,2.5
 - proto: GreebleAntenna1
   entities:
-  - uid: 287
+  - uid: 291
     components:
     - type: Transform
       parent: 1
       pos: -1.5,8.5
 - proto: GreebleAntenna2
   entities:
-  - uid: 288
+  - uid: 292
     components:
     - type: Transform
       parent: 1
       pos: 2.5,8.5
 - proto: GreebleElint1
   entities:
-  - uid: 289
+  - uid: 293
     components:
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 6.5,-3.5
-  - uid: 290
+  - uid: 294
     components:
     - type: Transform
       parent: 1
@@ -2352,38 +2352,38 @@ entities:
       pos: -5.5,-3.5
 - proto: GreebleRadarpanel2
   entities:
-  - uid: 291
+  - uid: 295
     components:
     - type: Transform
       parent: 1
       rot: 3.141592653589793 rad
       pos: 6.5,-3.5
-  - uid: 292
+  - uid: 296
     components:
     - type: Transform
       parent: 1
       pos: -5.5,-3.5
 - proto: Grille
   entities:
-  - uid: 293
+  - uid: 297
     components:
     - type: Transform
       parent: 1
       pos: -8.5,1.5
-  - uid: 294
+  - uid: 298
     components:
     - type: Transform
       parent: 1
       pos: 9.5,1.5
 - proto: GrilleDiagonal
   entities:
-  - uid: 295
+  - uid: 299
     components:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -8.5,0.5
-  - uid: 296
+  - uid: 300
     components:
     - type: Transform
       parent: 1
@@ -2391,7 +2391,7 @@ entities:
       pos: 9.5,0.5
 - proto: GunneryServerMedium
   entities:
-  - uid: 297
+  - uid: 301
     components:
     - type: Transform
       parent: 1
@@ -2402,41 +2402,41 @@ entities:
       powerLoad: 10
 - proto: GyroscopeTdf
   entities:
-  - uid: 298
+  - uid: 302
     components:
     - type: Transform
       parent: 1
       pos: -0.5,1.5
-  - uid: 299
+  - uid: 303
     components:
     - type: Transform
       parent: 1
       pos: 1.5,1.5
 - proto: Handcuffs
   entities:
-  - uid: 300
+  - uid: 304
     components:
     - type: Transform
       parent: 1
       pos: -3.8814535,2.6779847
-  - uid: 301
+  - uid: 305
     components:
     - type: Transform
       parent: 1
       pos: -3.9127035,2.5373597
-  - uid: 302
+  - uid: 306
     components:
     - type: Transform
       parent: 1
       pos: -3.9127035,2.4279847
-  - uid: 303
+  - uid: 307
     components:
     - type: Transform
       parent: 1
       pos: -3.8970785,2.3029847
 - proto: LockerWallColorL2RadiationFilled
   entities:
-  - uid: 304
+  - uid: 308
     components:
     - type: Transform
       parent: 1
@@ -2444,7 +2444,7 @@ entities:
       pos: 3.5,-3.5
 - proto: LockerWallMaterialsFuelBananiumFilled
   entities:
-  - uid: 224
+  - uid: 228
     components:
     - type: Transform
       parent: 1
@@ -2454,7 +2454,7 @@ entities:
       containers:
         entity_storage: !type:Container
           ents:
-          - 225
+          - 229
           showEnts: False
           occludes: True
         paper_label: !type:ContainerSlot
@@ -2463,28 +2463,28 @@ entities:
           occludes: True
 - proto: LockerWallMedicalFilled
   entities:
-  - uid: 305
+  - uid: 309
     components:
     - type: Transform
       parent: 1
       pos: -3.5,3.5
 - proto: MachineFTLDrive
   entities:
-  - uid: 306
+  - uid: 310
     components:
     - type: Transform
       parent: 1
       pos: 4.5,2.5
 - proto: NFHolopadShip
   entities:
-  - uid: 307
+  - uid: 311
     components:
     - type: Transform
       parent: 1
       pos: -2.5,-2.5
 - proto: PaperOffice
   entities:
-  - uid: 308
+  - uid: 312
     components:
     - type: Transform
       parent: 1
@@ -2497,7 +2497,7 @@ entities:
         i'm your average shipyard worker, i left a note here since i made a slight modification on the shuttle for the TDF. 
 
 
-        If you look at the shuttle number pad and press 1, you'll activate the sirine on the outer ship!, and if you feels threatened dont worry fam igotchu! just press number 2 to bolt the glassairlock!~, and if you press 3 it will bolt the external docking lock, going to 4 and you'll activate the blastdoor!
+        If you look at the shuttle number pad and press 1, you'll activate the sirine on the outer ship!, and if you feels threatened dont worry fam igotchu! just press number 2 to bolt the external airlock!~, and if you press 3 it will close the blast door, going to 4 and you'll bolt the glass airlock!
 
 
         Another thing to add is to becarefull when your shield is disabled, it has limited amount of APC so a disabled shield might cripple the ship so becarefull
@@ -2519,7 +2519,7 @@ entities:
         this is interceptor ship so dont try to brawl something.
 - proto: PortableGeneratorDKJrShuttle
   entities:
-  - uid: 309
+  - uid: 313
     components:
     - type: Transform
       parent: 1
@@ -2532,40 +2532,40 @@ entities:
     - type: InsertingMaterialStorage
 - proto: Poweredlight
   entities:
-  - uid: 310
+  - uid: 314
     components:
     - type: Transform
       parent: 1
       rot: 1.5707963267948966 rad
       pos: -0.5,-1.5
-  - uid: 311
+  - uid: 315
     components:
     - type: Transform
       parent: 1
       pos: 0.5,1.5
-  - uid: 312
+  - uid: 316
     components:
     - type: Transform
       parent: 1
       pos: -3.5,-1.5
-  - uid: 313
+  - uid: 317
     components:
     - type: Transform
       parent: 1
       pos: 3.5,-1.5
-  - uid: 314
+  - uid: 318
     components:
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 5.5,0.5
-  - uid: 315
+  - uid: 319
     components:
     - type: Transform
       parent: 1
       rot: -1.5707963267948966 rad
       pos: 1.5,-1.5
-  - uid: 316
+  - uid: 320
     components:
     - type: Transform
       parent: 1
@@ -2639,7 +2639,7 @@ entities:
       powerLoad: 0
     - type: DamageOnInteract
       isDamageActive: False
-  - uid: 317
+  - uid: 213
     components:
     - type: Transform
       parent: 1
@@ -2648,14 +2648,14 @@ entities:
     - type: ContainerContainer
       containers:
         light_bulb: !type:ContainerSlot
-          ent: 318
+          ent: 214
           showEnts: False
           occludes: True
     - type: ApcPowerReceiver
       powerLoad: 0
     - type: DamageOnInteract
       isDamageActive: False
-  - uid: 319
+  - uid: 215
     components:
     - type: Transform
       parent: 1
@@ -2664,7 +2664,7 @@ entities:
     - type: ContainerContainer
       containers:
         light_bulb: !type:ContainerSlot
-          ent: 320
+          ent: 216
           showEnts: False
           occludes: True
     - type: ApcPowerReceiver
@@ -2851,6 +2851,18 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -3.5,-4.5
+  - uid: 528
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -1.5,0.5
+  - uid: 531
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: 2.5,-1.5
 - proto: RadarEdgeMarkerHalftiltRight
   entities:
   - uid: 352
@@ -2912,6 +2924,18 @@ entities:
     - type: Transform
       parent: 1
       pos: 1.5,-0.5
+  - uid: 529
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: 2.5,0.5
+  - uid: 530
+    components:
+    - type: Transform
+      parent: 1
+      rot: 3.141592653589793 rad
+      pos: -1.5,-1.5
 - proto: RadarEdgeMarkerStraight
   entities:
   - uid: 363
@@ -3002,7 +3026,7 @@ entities:
       parent: 1
       rot: -1.5707963267948966 rad
       pos: -2.5,-3.5
-- proto: ShieldGeneratorSmall
+- proto: ShieldGeneratorMedium
   entities:
   - uid: 378
     components:
@@ -3136,6 +3160,7 @@ entities:
     components:
     - type: Transform
       parent: 1
+      rot: 3.141592653589793 rad
       pos: -3.5,-0.5
   - uid: 391
     components:
