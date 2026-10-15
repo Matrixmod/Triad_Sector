@@ -5631,3 +5631,15 @@ Entries:
   id: 2675
   time: '2026-10-14T22:36:23.0000000+00:00'
   url: https://github.com/Triad-Sector/Triad_Sector/pull/716
+- author: TheRealMasterChief117
+  changes:
+    - type: Add
+      message: >-
+        Added visualizers for the thruster blocking system! Shift-click on a
+        thruster to view it. Cyan means clear, red means blocked. Use the
+        examine text to see what percentage is blocked, and what is clear.
+    - type: Tweak
+      message: Made the minimum angle for large thrusters a little less strict.
+  id: 2676
+  time: '2026-10-15T00:39:08.0000000+00:00'
+  url: https://github.com/Triad-Sector/Triad_Sector/pull/730
